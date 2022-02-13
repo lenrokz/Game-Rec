@@ -1,0 +1,335 @@
+
+body {
+    background: #222222;
+    font-family: 'Alegreya', serif;
+    box-sizing: border-box;
+    color: white;
+    }
+    .mainheader {
+        text-align: center;
+        color: white;
+        font-size: 2.5em;
+    
+    }
+    .mainp {
+        text-align: center;
+        color: white;
+        font-size: 2.5em;
+    }
+    #genre {
+      position: absolute;
+      opacity: 0.8;
+      width: 305px;
+      font-family: 'Alegreya', serif;
+      transform: translate(-50%,-50%);
+      top: 50%;
+      left: 50%;
+      text-align: center;
+      font-weight: 600;
+      font-size: 20px;
+      letter-spacing: 0.5px;
+      cursor: pointer;
+      padding: 10px 20px;
+      margin-bottom: 50px;
+      letter-spacing: 0.5px;
+      outline: none;
+      
+      
+  
+    }
+    #system {
+      position: absolute;
+      opacity: 0.8;
+      width: 305px;
+      font-family: 'Alegreya', serif;
+      transform: translate(-50%,-50%);
+      top: 60%;
+      left: 50%;
+      text-align: center;
+      font-weight: 600;
+      font-size: 20px;
+      letter-spacing: 0.5px;
+      cursor: pointer;
+      padding: 10px 20px;
+      letter-spacing: 0.5px;
+      outline: none;
+      
+    }
+    select:hover{
+      border: 6px solid;
+  }
+  select option{
+      letter-spacing: 1.2px;
+      font-weight: 400;
+      font-size: 18px;
+  }
+
+    .center {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .center a {
+        margin: 0 5px;
+    }
+    .iconify {
+      position: relative;
+      left: 645px;
+      padding: 20px;
+      font-size: 50px;
+      width: 50px;
+      text-align: center;
+      text-decoration: none;
+      color: black;
+    }
+    
+    .iconify:hover {
+      opacity: 0.4;
+    }
+    .returnbutton {
+        position: absolute;
+      font-family: 'Alegreya', serif;
+      left: 690px;
+      top: 900px;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    #gameimage {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      width: 350px;
+      height: 350px;
+      border-radius: 8px;
+    }
+    #description, #gametitle {
+        text-align: center;
+    }
+
+    .photo_gallery {
+      display: flex;
+  }
+  
+  .photo_gallery a {
+          display: inline-block;
+          height: 50px;
+          border-style: solid;
+          border-color: black;
+      }
+  
+  .photo_gallery img {
+          object-position: center;
+          object-fit: cover;
+          height: 50%;
+          width: 50%;
+  }  
+
+  .navbar {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+
+  .nav-item {
+    float: right;
+  }
+  
+.nav-link {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  .nav-link:hover {
+    opacity:0.7;
+  }
+
+  .container {
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    left: 50%;
+    top: 80%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .center {
+    width: 180px;
+    height: 60px;
+    position: absolute;
+  }
+  
+  .btn {
+    width: 360px;
+    height: 60px;
+    cursor: pointer;
+    background: transparent;
+    border: 1px solid #91C9FF;
+    outline: none;
+    transition: 1s ease-in-out;
+    color:white;
+  }
+  
+  svg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    fill: none;
+    stroke: #fff;
+    stroke-dasharray: 150 480;
+    stroke-dashoffset: 150;
+    transition: 1s ease-in-out;
+  }
+  
+  .btn:hover {
+    transition: 1s ease-in-out;
+    background: #4F95DA;
+  }
+  
+  .btn:hover svg {
+    stroke-dashoffset: -480;
+  }
+  
+  .btn span {
+    color: white;
+    font-size: 18px;
+    font-weight: 100;
+  }
+
+  .baton {
+    box-sizing: border-box;
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none;
+    background-color: transparent;
+    border: 2px solid #1c5d99;
+    border-radius: 0.6em;
+    color: #1c5d99;
+    cursor: pointer;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-self: center;
+    -ms-flex-item-align: center;
+    align-self: center;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1;
+    margin: 20px;
+    padding: 1.2em 2.8em;
+    text-decoration: none;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    color:white;
+    display: inline-block;
+    width: 180px;
+    height: 60px;
+  }
+  .baton:hover, .baton:focus {
+    color: #fff;
+    outline: 0;
+  }
+  
+  .first {
+    -webkit-transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out;
+    transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out;
+    font-size: 10px;
+  }
+  .first:hover {
+    box-shadow: 0 0 40px 40px #1c5d99 inset;
+  }
+
+.group 			  { 
+  position:relative;
+}
+input 				{
+  font-size:18px;
+  padding:10px 10px 10px 5px;
+  display:block;
+  width:285px;
+  border:none;
+  border-bottom:1px solid #757575;
+  border-radius: 8px;
+}
+input:focus 		{ outline:none; }
+
+.bar 	{ position:relative; display:block; width:300px; }
+.bar:before, .bar:after 	{
+  content:'';
+  height:2px; 
+  width:0;
+  bottom:1px; 
+  position:absolute;
+  background:#5264AE; 
+  transition:0.2s ease all; 
+  -moz-transition:0.2s ease all; 
+  -webkit-transition:0.2s ease all;
+}
+.bar:before {
+  left:50%;
+}
+.bar:after {
+  right:50%; 
+}
+
+input:focus ~ .bar:before, input:focus ~ .bar:after {
+  width:50%;
+}
+
+.watchtitle {
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  color:white;
+}
+
+.group {
+  display: inline-block;
+}
+
+.grid-container {
+  display: inline-grid;
+  grid-template-columns: auto auto auto auto;
+}
+
+.intro {
+  background: black;
+  position: fixed;
+  top:0;
+  left:0;
+  height:100%;
+  width:100%;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+.intro-text {
+  color: rgb(248, 234, 234);
+  font-size: 3rem;
+}
+.slider {
+  background: rgb(168, 183, 184);
+  position: fixed;
+  top:0;
+  left:0;
+  height:100%;
+  width:100%;
+  transform: translateY(100%);
+}
+.hide {
+  background: black;
+  overflow:hidden;
+}
+.hide span {
+  transform:translateY(100%);
+  display: inline-block;
+}

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="/static/styles.css" rel="stylesheet">
+        <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simplelightbox/2.7.0/simple-lightbox.css" integrity="sha512-8WAX0xL/cHZ38RXoX2gtuqkAwmDVAzGwoFVmHvn46IDHGWOjTHx0vcl9OapNrfOzpFtql0SNkv+0y0b5Fm8ZkA==" crossorigin="anonymous" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gravitas+One&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gravitas+One&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+<style>
+@media screen and (max-width: 600px) {
+  .mainheader {
+        font-size: 2em;
+    }
+    .mainp {
+        font-size: 1.5em;
+    }
+    .iconify {
+      position: relative;
+      left: 13%;
+      padding: 20px;
+      font-size: 50px;
+      width: 50px;
+      text-align: center;
+      text-decoration: none;
+      color: black;
+    }
+    .baton {
+    font-size: 10px;
+    margin: 10px;
+    width: 150px;
+    height: 50px;
+  }
+  .grid-container {
+  display: inline-grid;
+  grid-template-columns: auto auto;
+}
+}
+@media only screen and (min-width: 600px) and (max-width: 750px) {
+    .mainheader {
+        font-size: 2em;
+    }
+    .mainp {
+        font-size: 1.5em;
+    }
+    .iconify {
+      position: relative;
+      left: 33%;
+      padding: 20px;
+      font-size: 50px;
+      width: 50px;
+      text-align: center;
+      text-decoration: none;
+      color: black;
+    }
+    .baton {
+    font-size: 11px;
+    margin: 10px;
+    width: 180px;
+    height: 60px;
+  }
+}
+  @media only screen and (min-width: 768px) and (max-width: 970px) {
+    .mainheader {
+        font-size: 2em;
+    }
+    .mainp {
+        font-size: 1.5em;
+    }
+    .iconify {
+      position: relative;
+      left: 34%;
+      padding: 20px;
+      font-size: 50px;
+      width: 50px;
+      text-align: center;
+      text-decoration: none;
+      color: black;
+    }
+    .baton {
+    font-size: 11px;
+    margin: 10px;
+    width: 180px;
+    height: 60px;
+  }
+
+  }
+  @media only screen and (min-width: 992px) and (max-width: 1170px) {
+    .mainheader {
+        font-size: 2em;
+    }
+    .mainp {
+        font-size: 1.5em;
+    }
+    .iconify {
+      position: relative;
+      left: 38%;
+      padding: 20px;
+      font-size: 50px;
+      width: 50px;
+      text-align: center;
+      text-decoration: none;
+      color: black;
+    }
+    .baton {
+    font-size: 11px;
+    margin: 10px;
+    width: 180px;
+    height: 60px;
+  }
+
+
+
+  }
+
+</style>
+
+        <title>GAME_REC</title>
+    </head>
+    <body>
+        {% block body %}
+        {% endblock %}
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js" integrity="sha512-H6cPm97FAsgIKmlBA4s774vqoN24V5gSQL4yBTDOY2su2DeXZVhQPxFK4P6GPdnZqM9fg1G3cMv5wD7e6cFLZQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/simplelightbox/2.7.0/simple-lightbox.min.js" integrity="sha512-ZajFBgnksNp8Rj+AbmYe8ueOu45HiSjtf3QpqnRbHlq719m6VK0FkbYIqQ8wEnlVuJ1i9pC+z6Z9ewmDnUTMCg==" crossorigin="anonymous"></script>
+        <script>
+            var gallery = new SimpleLightbox('.photo_gallery a');
+        </script>
+        <script>
+          const tl = gsap.timeline({defaults: {ease: "power1.out"}})
+          tl.to('.text', {y:'0%', duration: 1, stagger: 0.5})
+          tl.to('.slider', {y: "-100%", duration: 1.5, delay: 0.5})
+          tl.to('.intro', {y: "-100%", duration: 1}, "-=1")
+          tl.fromTo(".show", {opacity: 0}, {opacity: 1, duration:1})
+        </script>
+    </body>
+</html>

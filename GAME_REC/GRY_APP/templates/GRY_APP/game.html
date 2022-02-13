@@ -1,0 +1,120 @@
+{% extends "GRY_APP/layout.html" %}
+
+{% block body %}
+<ul class="navbar">
+    <li class="nav-item">
+        <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+    </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'watchlist' %}">Watchlist</a>
+        </li>
+    </ul>    
+<img id="gameimage" src="{{game.image}}" alt="imageofthegame">
+<h1 id="gametitle">{{game.title}}</h1>
+<p id="description">{{game.description1}}</p>
+<p id="description">{{game.description2}}</p>
+<p id="description">{{game.description3}}</p>
+<p id="description">{{game.description4}}</p>
+<p id="description">{{game.description5}}</p>
+<p id="description">{{game.date}}</p>
+<p id="description">{{game.genre}}</p>
+<p id="description">{{game.system}}</p>
+<p id="description">Recommendations: <b style="font-family: 'Anton', sans-serif;font-size: 20px;">{{likes}}</b></p>
+{% if game.system == "Xbox" %}
+<a href="{{game.xbox}}" target="_blank"> <span style="position: relative;  left: 740px; color:green" class="iconify" data-icon="cib:xbox" data-inline="false"></span> </a>
+{% endif %}
+{% if game.system == "Playstation" %}
+<a href="{{game.playstation}}" target="_blank"> <span style="position: relative;  left: 740px;color:blue;" class="iconify" data-icon="cib:playstation" data-inline="false"></span> </a>
+{% endif %}
+{% if game.system == "Multiplatform" %}
+<a href="{{game.xbox}}" target="_blank"> <span style="color:green;" class="iconify" data-icon="cib:xbox" data-inline="false"></span> </a>
+<a href="{{game.pc}}" target="_blank"> <span class="iconify" data-icon="cib:steam" data-inline="false"></span> </a>
+<a href="{{game.playstation}}" target="_blank"> <span style="color:blue;" class="iconify" data-icon="cib:playstation" data-inline="false"></span> </a>
+{% endif %}
+
+<section class="photo_gallery">
+{% for x in images %}
+<a href="{{x.image}}" style="display: inline-block;height: 300px;" id="heh"><img src="{{x.image}}" alt="{{x.description}}" title="" style="object-position: center;object-fit: cover;height: 100%;width: 100%;"/></a>    
+{% endfor %}
+</section>
+<br>
+<br>
+<div class="grid-container">
+    <div class="grid-item">
+        <form action="{% url 'game_page' game.id %}" method="post">
+            {% csrf_token %}
+            <button  type="submit" name="again" class="baton first" value="Again">Try again {{game.genre }} category</button>
+        </form>
+    </div>
+    <div class="grid-item">
+        <form action="{% url 'index'  %}" method="get">
+            <button  type="submit" name="again" class="baton first" value="return">Try again</button>
+        </form>
+    </div>
+    
+    
+    {% if not check %}
+    <div class="grid-item">
+        <form action="{% url 'game_page' game.id %}" method="post">
+            {% csrf_token %}
+            <button  type="submit" name="add" class="baton first" value="Add">Add to Watchlist</button>
+        </form>
+    </div>
+    {% endif %}
+    {% if check %}
+    <div class="grid-item">
+        <form action="{% url 'game_page' game.id %}" method="post">
+            {% csrf_token %}
+            <button type="submit" name="delete" class="baton first" value="Delete">Remove from Watchlist</button>
+        </form>
+    </div>
+    {% endif %}
+    {% if not liked %}
+    <div class="grid-item">
+        <form action="{% url 'game_page' game.id  %}" method="post">
+            {% csrf_token %}
+            <button  type="submit" name="like" class="baton first" value="Like">I recommend</button>
+        </form>
+    </div> 
+    
+    {% endif %}
+    {% if liked %}
+    <div class="grid-item">
+        <form action="{% url 'game_page' game.id  %}" method="post">
+            {% csrf_token %}
+            <button  type="submit" name="unlike" class="baton first" value="Unlike">I do not recommend</button>
+        </form>
+    </div>  
+    
+    {% endif %}
+
+
+</div>
+<br>
+<div class="group">      
+<form action="{% url 'game_page' game.id %}" method="post">
+    {% csrf_token %}
+    <h5>Create a comment</h5>
+    <input type="text" name="comment">
+    <span class="highlight"></span>
+    <span class="bar"></span>
+      </div>
+    <input class="baton first" type="submit" value="Add comment">
+    <br>
+  
+    
+
+
+<h3>Comments:</h3>
+<hr>
+{% for comment in game.comment.all %}
+{{ comment.content}}
+<p><b>User: {{ comment.user.username }}</b> </p>
+<hr>
+{% empty %}
+<p>There are no comments about this game yet.</p>
+<hr>
+{% endfor %}
+
+{% endblock %}
+

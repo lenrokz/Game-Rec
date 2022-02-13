@@ -1,0 +1,50 @@
+{% extends "GRY_APP/layout.html" %}
+
+{% block body %}
+<ul class="navbar">
+  <li class="nav-item">
+      <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+  </li>
+      <li class="nav-item">
+          <a class="nav-link" href="{% url 'watchlist' %}">Watchlist</a>
+      </li>
+  </ul>    
+<header style="font-family: 'Gravitas One';" class="mainheader">Game Rec</header>
+<p class="mainp">Game recommendations from the library of the best games of all time!</p>
+<p class="mainp">If you don't know which game you want to play, just choose a genre and system you wanna play on :)</p>
+<form action="{% url 'index' %}" method="post">
+    {% csrf_token %}
+  <div id="genre">
+<select required id="genre" name="genre" >
+  <option disabled selected value="choose">Choose a genre:</option>
+  <option value="action">Action</option>
+  <option value="adventure">Adventure</option>
+  <option value="fightinggames">Fighting Games</option>
+  <option value="fps">First-Person-Shooters</option>
+  <option value="rpg">Role-Playing-Games</option>
+  <option value="tps">Third-Person-Shooters</option>
+  <option value="horror">Horror</option>
+</select>
+</div>
+<div id="system">
+<select required id="system" name="system" >
+  <option disabled selected value="platform">Choose a platform:</option>
+  <option value="multiplatform">Multiplatform</option>
+  <option value="xbox">XBOX</option>
+  <option value="playstation">Playstation</option>
+</select>
+</div>
+<div class="container">
+  <div class="center">
+    <button type="submit" class="btn">
+      <svg width="180px" height="60px" viewBox="0 0 180 60" class="border">
+        <polyline points="179,1 179,59 1,59 1,1 179,1" class="bg-line" />
+        <polyline points="179,1 179,59 1,59 1,1 179,1" class="hl-line" />
+      </svg>
+      <span>Let's play!</span>
+    </button>
+  </div>
+</div>
+</div>
+</form>
+{% endblock %}

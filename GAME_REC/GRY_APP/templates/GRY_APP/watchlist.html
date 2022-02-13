@@ -1,0 +1,23 @@
+{% extends "GRY_APP/layout.html" %}
+
+{% block body %}
+<ul class="navbar">
+    <li class="nav-item">
+        <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+    </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'index' %}">Index</a>
+        </li>
+    <h2>{{user.username}}'s Watchlist</h2>
+    <hr>
+{% for x in gamess %}
+<img id="gameimage" src="{{x.game.image}}" alt="imageofthegame">
+<a class="watchtitle" href="{% url 'game_page' x.game.id  %}"><h1>{{x.game.title}}</h1></a>
+<p id="description">{{x.game.genre}}</p>
+<p id="description">{{x.game.system}}</p>
+<hr>
+{% endfor %}
+{% if not gamess %} 
+<h3>Watchlist is empty.</h3>
+{% endif %}
+{% endblock %}
